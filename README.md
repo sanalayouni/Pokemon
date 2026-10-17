@@ -1,150 +1,82 @@
-Pokémon Review API 🐉
+# Pokémon Review API
 
-A RESTful API built with Java and Spring Boot as a hands-on project to learn backend development fundamentals. The project focuses on understanding how Spring Boot applications are structured and how REST APIs interact with a database through a layered architecture.
+A REST API built with Java and Spring Boot as a hands-on project to learn backend development. I'm building it step by step to understand how a Spring application works, from handling HTTP requests to persisting data in a database.
 
-Rather than simply following tutorials, I'm building this project step by step to practice the core concepts of Spring Boot.
+## About the Project
 
-🎯 Project Goals
+The goal is to learn Spring Boot by implementing features rather than just following tutorials. I'm currently focusing on Pokémon CRUD operations and understanding the role of each layer in the application.
 
-Learn Spring Boot fundamentals through practical implementation.
+## Tech Stack
 
-Understand REST API development and HTTP methods.
+- **Java** — Object-oriented programming
+- **Spring Boot & Spring Web** — Application setup and REST endpoints
+- **Spring Data JPA & Hibernate** — Database access and ORM
+- **Lombok** — Reducing boilerplate code
+- **Maven** — Dependency and build management
+- **Postman** — API testing
 
-Practice layered architecture and separation of concerns.
+## How It Works
 
-Learn how Spring Data JPA simplifies database operations.
+The application uses a layered architecture to keep responsibilities separate.
 
-Improve backend development skills by building and testing CRUD operations.
-
-🛠️ Tech Stack
-
-Java — Object-oriented programming.
-
-Spring Boot — Backend application framework.
-
-Spring Web — Building REST endpoints.
-
-Spring Data JPA — Database persistence and repository operations.
-
-Hibernate — Object-relational mapping (ORM).
-
-Jakarta Persistence (JPA) — Entity mapping and persistence annotations.
-
-Lombok — Reducing boilerplate code.
-
-Maven — Dependency management and project build.
-
-Postman — Testing HTTP endpoints.
-
-🏗️ Architecture
-
-The application follows a layered architecture:
-
+```text
+HTTP Request
+     |
+     v
 Controller
-    ↓
+     |
+     v
 Service
-    ↓
+     |
+     v
 Repository
-    ↓
+     |
+     v
 Database
+```
 
-Controller Layer: Receives HTTP requests and returns responses.
+- **Controller:** Handles incoming HTTP requests.
+- **Service:** Contains the application's logic.
+- **Repository:** Provides database operations through Spring Data JPA.
+- **Entity:** Defines the structure of the data stored in the database.
 
-Service Layer: Contains application logic and coordinates operations.
+## Current Features
 
-Repository Layer: Uses Spring Data JPA to access and manage database records.
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/pokemon` | Retrieve all Pokémon |
+| `GET` | `/api/pokemon/{id}` | Retrieve a Pokémon by ID |
+| `POST` | `/api/pokemon` | Create a Pokémon |
+| `PUT` | `/api/pokemon/{id}` | Update a Pokémon |
+| `DELETE` | `/api/pokemon/{id}` | Delete a Pokémon |
 
-Entity Layer: Represents application data stored in the database.
+### Example Request
 
-This structure helps separate responsibilities and makes the application easier to maintain and extend.
+Create a Pokémon using `POST /api/pokemon`:
 
-📚 What I'm Learning
-
-1. Spring Boot Fundamentals
-
-Creating a Spring Boot application.
-
-Understanding dependency injection through constructor injection.
-
-Using @RestController, @Service, and Spring's component management.
-
-Configuring request mappings with @RequestMapping.
-
-2. REST API Development
-
-Understanding HTTP methods: GET, POST, PUT, and DELETE.
-
-Mapping URLs to controller methods.
-
-Using @PathVariable to extract values from URLs.
-
-Using @RequestBody to convert JSON into Java objects.
-
-Returning Java objects as JSON responses.
-
-3. Spring Data JPA and Database Operations
-
-Creating entity classes with @Entity.
-
-Defining primary keys with @Id.
-
-Generating IDs with @GeneratedValue.
-
-Creating repositories using JpaRepository.
-
-Performing CRUD operations without writing SQL queries for basic operations.
-
-4. Object-Oriented Design and Code Organization
-
-Separating controllers, services, repositories, and entities.
-
-Managing dependencies between application layers.
-
-Understanding how a request travels through a Spring Boot application.
-
-🚀 Implemented Features
-
-The current implementation focuses on managing Pokémon.
-
-HTTP Method
-
-Endpoint
-
-Description
-
-GET
-
-/api/pokemon
-
-Retrieve all Pokémon
-
-GET
-
-/api/pokemon/{id}
-
-Retrieve a Pokémon by ID
-
-POST
-
-/api/pokemon
-
-Create a Pokémon
-
-PUT
-
-/api/pokemon/{id}
-
-Update a Pokémon
-
-DELETE
-
-/api/pokemon/{id}
-
-Delete a Pokémon
-
-Example Pokémon JSON
-
+```json
 {
   "name": "Pikachu",
   "type": "Electric"
 }
+```
+
+## What I'm Learning
+
+- Building REST APIs with Spring Boot
+- Constructor-based dependency injection
+- Mapping HTTP requests with Spring MVC annotations
+- Working with entities and repositories using Spring Data JPA
+- Understanding CRUD operations and layered architecture
+
+## What's Next
+
+- Implement the review feature and connect reviews to Pokémon
+- Learn how to model entity relationships with JPA
+- Add input validation and proper error handling
+- Improve API responses and HTTP status codes
+- Write tests for the endpoints
+
+---
+
+**Status:** In progress — building and learning one feature at a time.
