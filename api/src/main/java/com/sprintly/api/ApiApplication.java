@@ -1,4 +1,4 @@
-package com.PokemonReview.api;
+package com.sprintly.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
